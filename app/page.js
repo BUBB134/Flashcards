@@ -13,7 +13,9 @@ import {
 } from "@mui/material";
 import Head from "next/head"; // Importing Head from next/head
 import getStripe from "./utils/get-stripe";
-import FeatureCards from "./components/ui/cards";
+import FeatureCards, { featuresContent } from "./components/ui/cards";
+import OpenAISVG, { QuizletSVG } from "./components/ui/svg";
+import BasicCard, { PricingCards } from "./components/ui/cards";
 
 const CLERK_KEY = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
@@ -83,7 +85,7 @@ export default function Home() {
         {/* Features Section */}
 
         <Box
-          sx={{ alignItems: "center", textAlign: "center", paddingTop: "30px" }}
+          sx={{ alignItems: "center", textAlign: "center", paddingY: "64px" }}
         >
           <Typography variant="h4" component="h2" gutterBottom>
             Features
@@ -97,17 +99,23 @@ export default function Home() {
             justifyContent={"center"}
             gap={8}
           >
-            <FeatureCards />
-            <FeatureCards />
-            <FeatureCards />
+            {featuresContent.map((item, index) => (
+              <BasicCard {...item} />
+            ))}
           </Grid>
         </Box>
         <Box sx={{ my: 6, textAlign: "center" }}>
           <Typography variant="h4" component="h2" gutterBottom>
             Pricing
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
-            {/* Pricing plans */}
+          <Grid
+            justifyContent="center"
+            flexDirection={"row"}
+            display={"flex"}
+            marginTop={"100px"}
+            gap="-20px"
+          >
+            <PricingCards />
           </Grid>
         </Box>
       </Container>
