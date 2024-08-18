@@ -14,7 +14,7 @@ import {
 import Head from "next/head"; // Importing Head from next/head
 import BasicCard, { featuresContent, PricingCards } from "./components/ui/cards";
 
-const CLERK_KEY = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+// const CLERK_KEY = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 // const handleSubmit = async () => {
 //   const checkoutSession = await fetch("/api/checkout_sessions", {
