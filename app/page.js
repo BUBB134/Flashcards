@@ -17,24 +17,24 @@ import FeatureCards, { featuresContent } from "./components/ui/cards";
 import OpenAISVG, { QuizletSVG } from "./components/ui/svg";
 import BasicCard, { PricingCards } from "./components/ui/cards";
 
-const CLERK_KEY = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+// const CLERK_KEY = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
-const handleSubmit = async () => {
-  const checkoutSession = await fetch("/api/checkout_sessions", {
-    method: "POST",
-    headers: { origin: "http://localhost:3000" },
-  });
-  const checkoutSessionJson = await checkoutSession.json();
+// const handleSubmit = async () => {
+//   const checkoutSession = await fetch("/api/checkout_sessions", {
+//     method: "POST",
+//     headers: { origin: "http://localhost:3000" },
+//   });
+//   const checkoutSessionJson = await checkoutSession.json();
 
-  const stripe = await getStripe();
-  const { error } = await stripe.redirectToCheckout({
-    sessionId: checkoutSessionJson.id,
-  });
+//   const stripe = await getStripe();
+//   const { error } = await stripe.redirectToCheckout({
+//     sessionId: checkoutSessionJson.id,
+//   });
 
-  if (error) {
-    console.warn(error.message);
-  }
-};
+//   if (error) {
+//     console.warn(error.message);
+//   }
+// };
 
 export default function Home() {
   return (
