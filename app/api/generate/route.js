@@ -22,7 +22,7 @@ export async function POST(req) {
       { role: "system", content: systemPrompt },
       { role: "user", content: data },
     ],
-    model: "gpt-4o-mini",
+    model: "gpt-4o",
     response_format: { type: "json_object" },
   });
   const flashcards = JSON.parse(completion.choices[0].message.content);
